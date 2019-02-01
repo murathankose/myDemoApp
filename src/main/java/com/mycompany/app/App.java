@@ -37,7 +37,7 @@ import spark.template.mustache.MustacheTemplateEngine;
 
 public class App
 {
-    public static void need(ArrayList<Integer> array, int e){
+  /*  public static void need(ArrayList<Integer> array, int e){
 	System.out.println("Multiples and plus");
 	if(array == null) return 0;
 	int a=0;
@@ -45,7 +45,7 @@ public class App
 		a+=(elt*e);
 	}
 	return a;
-    }
+    }*/
     public static boolean search(ArrayList<Integer> array, int e) {
       System.out.println("inside search");
       if (array == null) return false;
