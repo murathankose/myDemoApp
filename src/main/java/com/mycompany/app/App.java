@@ -54,7 +54,8 @@ public static void main(String[] args) {
         post("/compute", (req, res) -> {
           //System.out.println(req.queryParams("input1"));
           //System.out.println(req.queryParams("input2"));
-
+	 String input3 = req.queryParams("input3");
+	 String input4 = req.queryParams("input4");
           String input1 = req.queryParams("input1");
           java.util.Scanner sc1 = new java.util.Scanner(input1);
           sc1.useDelimiter("[;\r\n]+");
