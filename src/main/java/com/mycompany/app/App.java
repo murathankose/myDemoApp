@@ -37,6 +37,15 @@ import spark.template.mustache.MustacheTemplateEngine;
 
 public class App
 {
+    public static void need(ArrayList<Integer> array, int e){
+	System.out.println("Multiples and plus");
+	if(array == null) return 0;
+	int a=0;
+	for(int elt : array) {
+		a+=(elt*e);
+	}
+	return a;
+    }
     public static boolean search(ArrayList<Integer> array, int e) {
       System.out.println("inside search");
       if (array == null) return false;
@@ -56,6 +65,7 @@ public static void main(String[] args) {
           //System.out.println(req.queryParams("input2"));
 	 String input3 = req.queryParams("input3");
 	 String input4 = req.queryParams("input4");
+
           String input1 = req.queryParams("input1");
           java.util.Scanner sc1 = new java.util.Scanner(input1);
           sc1.useDelimiter("[;\r\n]+");
