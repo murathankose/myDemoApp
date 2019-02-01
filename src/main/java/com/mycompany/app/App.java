@@ -37,14 +37,14 @@ import spark.template.mustache.MustacheTemplateEngine;
 
 public class App
 {
-    public static int need(ArrayList<Integer> array, int e){
-	System.out.println("Multiples and plus");
-	if(array == null) return 0;
-	int a=0;
+    public static boolean divisible(ArrayList<Integer> array, int e){
+	System.out.println("divisible");
+	if(array == null) return false;
 	for(int elt : array) {
-		a+=(elt*e);
+		if(elt%e!=0)
+			return false;
 	}
-	return a;
+	return true;
     }
     public static boolean search(ArrayList<Integer> array, int e) {
       System.out.println("inside search");
@@ -63,8 +63,6 @@ public static void main(String[] args) {
         post("/compute", (req, res) -> {
           //System.out.println(req.queryParams("input1"));
           //System.out.println(req.queryParams("input2"));
-	 String input3 = req.queryParams("input3");
-	 String input4 = req.queryParams("input4");
 
           String input1 = req.queryParams("input1");
           java.util.Scanner sc1 = new java.util.Scanner(input1);
@@ -82,9 +80,24 @@ public static void main(String[] args) {
           int input2AsInt = Integer.parseInt(input2);
 
           boolean result = App.search(inputList, input2AsInt);
+	  String input3 = req.queryParams("input3");
+          java.util.Scanner sc3 = new java.util.Scanner(input3);
+          sc3.useDelimiter("[;\r\n]+");
+          java.util.ArrayList<Integer> inputList3 = new java.util.ArrayList<>();
+          while (sc3.hasNext())
+          {
+            int value = Integer.parseInt(sc3.next().replaceAll("\\s",""));
+            inputList3.add(value);
+          }
+          System.out.println(inputList3);
+
+	  String input4 = req.queryParams("input4").replaceAll("\\s","");
+          int input4AsInt = Integer.parseInt(input4);
+	  boolean result2=App.divisible(inputList3, input4AsInt);
 
          Map map = new HashMap();
           map.put("result", result);
+	  map.put("result2", result2);
           return new ModelAndView(map, "compute.mustache");
         }, new MustacheTemplateEngine());
 
