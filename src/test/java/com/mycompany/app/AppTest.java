@@ -18,7 +18,7 @@ public class AppTest extends TestCase
      * @param testName name of the test case
      */
 
-    public void testDivisionByZero() {
+ /*   public void testDivisionByZero() {
     ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
     assertFalse(new App().divisible(array, 0));
   }
@@ -39,7 +39,7 @@ public class AppTest extends TestCase
   }
   public void testNull() {
     assertFalse(new App().divisible(null, 2));
-  }
+  }*/
     public AppTest( String testName )
     {
         super( testName );

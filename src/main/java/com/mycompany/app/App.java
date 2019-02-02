@@ -38,7 +38,7 @@ import spark.template.mustache.MustacheTemplateEngine;
 public class App
 {
     public static boolean divisible(ArrayList<Integer> array, int e){
-    System.out.println("divisible");
+    System.out.println("Divisible");
     if(array == null || array.size() == 0 || e == 0/*Undefined*/) return false;
     for (int elt : array) {
       if(elt % e != 0) return false;
