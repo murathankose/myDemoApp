@@ -38,14 +38,13 @@ import spark.template.mustache.MustacheTemplateEngine;
 public class App
 {
     public static boolean divisible(ArrayList<Integer> array, int e){
-	System.out.println("divisible");
-	if(array == null) return false;
-	for(int elt : array) {
-		if(elt%e!=0)
-			return false;
-	}
-	return true;
+    System.out.println("divisible");
+    if(array == null || array.size() == 0 || e == 0/*Undefined*/) return false;
+    for (int elt : array) {
+      if(elt % e != 0) return false;
     }
+    return true;
+  }//end of method
     public static boolean search(ArrayList<Integer> array, int e) {
       System.out.println("inside search");
       if (array == null) return false;

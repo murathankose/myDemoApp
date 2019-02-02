@@ -17,15 +17,7 @@ public class AppTest extends TestCase
      *
      * @param testName name of the test case
      */
-    public static boolean divisible(ArrayList<Integer> array, int e){
-    System.out.println("divisible");
-    //if'e array ve e'yi ekledim
-    if(array == null || array.size() == 0 || e == 0/*Undefined*/) return false;
-    for (int elt : array) {
-      if(elt % e != 0) return false;
-    }
-    return true;
-  }//end of method
+
     public void testDivisionByZero() {
     ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
     assertFalse(new App().operator(array, 0));
