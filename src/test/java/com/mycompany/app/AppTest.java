@@ -18,26 +18,26 @@ public class AppTest extends TestCase
      * @param testName name of the test case
      */
 
-    public void TestDivisionByZero() {
+    public void testDivisionByzero() {
     ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
     assertFalse(new App().divisible(array, 0));
   }
 
-  public void TestDividedIsZero() {
+  public void testDividedIszero() {
     ArrayList<Integer> array = new ArrayList<>(Arrays.asList(2, 4, 0, 7));
     assertFalse(new App().divisible(array, 2));
   }
 
-  public void TestNotDivisible() {
+  public void testNotdivisible() {
     ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
     assertFalse(new App().divisible(array, 5));
   }
 
-  public void TestEmptyArray() {
+  public void testEmptyarray() {
     ArrayList<Integer> array = new ArrayList<>();
     assertFalse(new App().divisible(array, 2));
   }
-  public void TestNull() {
+  public void testnull() {
     assertFalse(new App().divisible(null, 2));
   }
     public AppTest( String testName )
