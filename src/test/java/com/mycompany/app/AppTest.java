@@ -20,17 +20,17 @@ public class AppTest extends TestCase
 
     public void testDivisionByZero() {
     ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
-    assertFalse(new App().operator(array, 0));
+    assertFalse(new App().divisible(array, 0));
   }
 
   public void testDividedIsZero() {
     ArrayList<Integer> array = new ArrayList<>(Arrays.asList(2, 4, 0, 7));
-    assertFalse(new App().operator(array, 2));
+    assertFalse(new App().divisible(array, 2));
   }
 
   public void testNotDivisible() {
     ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
-    assertFalse(new App().operator(array, 5));
+    assertFalse(new App().divisible(array, 5));
   }
 
   public void testEmptyArray() {
